@@ -8,7 +8,7 @@
 }
 
 body {
-  background-image: url('https://www.freepik.com/free-psd/makeup-sales-blank-banner-background_133622763.htm#fromView=keyword&page=3&position=7&uuid=2e326b58-4f10-4325-ae9c-434239320bd0&new_detail=true&query=Beauty+Salon+Background'); /* Apni image ka URL yahan daalein */
+  background-image: url('beauty.jpg'); /* Apni image ka URL yahan daalein */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
