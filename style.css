@@ -80,11 +80,14 @@ body {
   padding: 10px;
   border-radius: 25px;
   transition: all 0.4s ease;
+  box-shadow: 0 0 15px 5px rgba(52, 152, 219, 0.8); /* Neon blue glow */
 }
 
 #check:checked ~ .image-box {
   bottom: 70px;
+  box-shadow: 0 0 25px 10px rgba(52, 152, 219, 1); /* Brighter neon glow when checked */
 }
+
 
 #check {
   display: none;
