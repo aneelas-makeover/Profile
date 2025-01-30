@@ -1,80 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-.main{
+html,body{
+  display: grid;
+  height: 100%;
   width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url(images/back.jpg);
-  background-position: center;
-  background-size: cover;
+  place-items: center;
+  background: linear-gradient(375deg, #1cc7d0, #2ede98);
 }
-.profile-card{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 400px;
-  width: 100%;
-  border-radius: 25px;
-  padding: 30px;
-  border: 1px solid #ffffff40;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+::selection{
+  color: #fff;
+  background: #1cc7d0;
 }
-.image{
+.wrapper{
+  height: 400px;
+  width: 320px;
   position: relative;
+  transform-style: preserve-3d;
+ perspective: 1000px;
+}
+.wrapper .card{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  transform: translateY(0deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+  transition: transform 0.7s cubic-bezier(0.4,0.2,0.2,1);
+}
+.wrapper:hover > .front-face{
+  transform: rotateY(-180deg);
+}
+.wrapper .card img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.wrapper .back-face{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  transform: rotateY(180deg);
+}
+.wrapper:hover > .back-face{
+  transform: rotateY(0deg);
+}
+.wrapper .back-face img{
   height: 150px;
   width: 150px;
-}
-.image .profile-pic{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  padding: 5px;
   border-radius: 50%;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  background: linear-gradient(375deg, #1cc7d0, #2ede98);
 }
-.data{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 15px;
-}
-.data h2{
-  font-size: 33px;
-  font-weight: 600;
-}
-span{
-  font-size: 18px;
-}
-.row{
-  display: flex;
-  align-items: center;
-  margin-top: 30px;
-}
-.row .info{
+.wrapper .back-face .info{
   text-align: center;
-  padding: 0 20px;
 }
-.buttons{
+.back-face .info .title{
+  font-size: 30px;
+  font-weight: 500;
+}
+.back-face ul{
   display: flex;
-  align-items: center;
-  margin-top: 30px;
 }
-.buttons .btn{
+.back-face ul a{
+  display: block;
+  height: 40px;
+  width: 40px;
   color: #fff;
-  text-decoration: none;
-  margin: 0 20px;
-  padding: 8px 25px;
-  border-radius: 25px;
-  font-size: 18px;
-  white-space: nowrap;
-  background: linear-gradient(to left, #33ccff 0%, #ff99cc 100%);
+  text-align: center;
+  margin: 0 5px;
+  line-height: 38px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #1cc7d0, #2ede98);
+  transition: all 0.5s ease;
 }
-.buttons .btn:hover{
-  box-shadow: inset 0 5px 20px rgba(0,0,0,0.4);
+.back-face ul a:hover{
+  color: #1cc7d0;
+  border-color: #1cc7d0;
+  background: linear-gradient(375deg, transparent, transparent);
 }
